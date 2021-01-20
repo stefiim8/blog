@@ -1,0 +1,28 @@
+
+<div class="mx-auto" style="width: 60%;">
+    <form (ngSubmit)="onPost(f)" #f="ngForm">
+        <div class="form-group" >
+            <label for="post" >Post</label>
+            <textarea class="form-control" id="post" name="post" rows="3" placeholder="Write something..." ngModel></textarea>
+            <br>
+            <div class="alert alert-danger" role="alert" *ngIf="error">
+                {{error}}
+            </div>
+            <br>
+            <button class="btn btn-outline-primary float-right">Post</button>
+            </div>
+    </form>
+<br><hr><br>
+</div>
+<div *ngFor="let item of items.slice().reverse()" >
+<div class="mx-auto" style="width: 50%;">
+    <div class="border p-3">
+        <h3>{{item.name}}</h3>
+        <h1 class="p-2">{{ item.title }}</h1>
+        <p class="p-2">{{ item.content }}</p>
+    </div>
+    <br><hr><br>
+</div>
+</div>
+
+
